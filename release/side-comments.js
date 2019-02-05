@@ -748,7 +748,7 @@ Section.prototype.postComment = function() {
   	  commentBody = $commentBox.val(),
   	  comment = {
 	  	sectionId: this.id,
-	  	comment: commentBody,
+	  	comment: commentBody.split(/<\s*[^>]*>/g).join(''),
 	  	authorAvatarUrl: this.currentUser.avatarUrl,
 	  	authorName: this.currentUser.name,
 	  	authorId: this.currentUser.id,
